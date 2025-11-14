@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Site</title>
+
+   <!-- add icon link
+        <link rel="icon" href="./img/creditlit 32x32.png" sizes="32x32" type="image/x-icon">
+ -->
+  <!-- Bootstrap and CSS -->
+  <!--Link for connecting to bootstrap-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Boxicons CDN Link -->
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+  <!--Link to connect to font awesome-->
+  <!--Link to connect to CSS-->
+  <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
+  <link rel="stylesheet" href="./css/headers.css">
+
+</head>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: #0000001a;
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow:
+          inset 0 0.5em 1.5em #0000001a,
+          inset 0 0.125em 0.5em #00000026;
+      }
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+      .bd-mode-toggle .bi {
+        width: 1em;
+        height: 1em;
+      }
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+  </head>
+  <body>
+      
+   
+      <nav class="py-2 bg-body-tertiary border-bottom">
+        <div class="container d-flex flex-wrap">
+          <ul class="nav me-auto">
+            <li class="nav-item">
+              <a
+                href="#"
+                class="nav-link link-body-emphasis px-2 active"
+                aria-current="page"
+                ></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link link-body-emphasis px-2"></a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link link-body-emphasis px-2"></a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link link-body-emphasis px-2"></a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link link-body-emphasis px-2"></a>
+            </li>
+          </ul>
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="#" class="nav-link link-body-emphasis px-2" style="font-size: smaller;">lorem</a>
+            </li>
+             <li class="nav-item">
+              <a href="#" class="nav-link link-body-emphasis px-2" style="font-size: smaller;">|</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link link-body-emphasis px-2" style="font-size: smaller;">lorem</a>
+            </li>
+             <li class="nav-item">
+              <a href="#" class="nav-link link-body-emphasis px-2" style="font-size: smaller;">|</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link link-body-emphasis px-2" style="font-size: smaller;">lorem</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <header class="py-3 mb-4 border-bottom">
+        <div class="container d-flex flex-wrap justify-content-center">
+          <a
+            href="/"
+            class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none" style="font-size:x-large; font-weight: bolder;"
+          >
+        LOREM
+    
+          </a>
+             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto align-items-center">
+  <a class="navhover me-3 py-2 link-body-emphasis text-decoration-none" href="#" style="font-size: small;">HOME</a>
+
+  <a class="navhover me-3 py-2 link-body-emphasis text-decoration-none" href="#" style="font-size: small;">SOLUTIONS</a>
+
+ <a class="navhover me-3 py-2 link-body-emphasis text-decoration-none active"
+     href="index.html"
+     style="font-size: small;">
+     PRODUCTS
+  </a>
+
+  <a class="navhover me-3 py-2 link-body-emphasis text-decoration-none" href="#" style="font-size: small;">RESOURCES</a>
+
+  <a class="navhover me-3 py-2 link-body-emphasis text-decoration-none" href="#" style="font-size: small;">SUPPORT CENTER</a>
+
+  <!-- COLLAPSE BUTTON -->
+  <a class="btn-sm ms-2" data-bs-toggle="collapse" href="" role="button" style="color: black;">
+    <i class='bx  bx-search'    ></i> 
+  </a>
+</nav>
+        </div>
+      </header>
+    </main>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8"></div>
+     <div class="col-sm-4">
+      
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search Product or Keyword" aria-label="Search"/>
+      <button class="btn btn-outline-primary" type="submit" id="btnstyle" >Go</button>
+    </form>
+     </div>
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+    <h3 style="font-weight: normal; color: rgb(4, 63, 139);">PRODUCT TITLE DESCRIPTION</h3>
+<hr>
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-7">
+             <div class="main-display" id="mainDisplay">
+  <img id="mainImage" src="" alt="Preview" />
+</div>
+
+  <div class="thumbnails" id="thumbnailContainer">
+    <div class="thumbnail-wrapper">
+    <img src="./img/sample.jpg" data-detail="" data-bg="./img/sample.jpg" />
+    <br>
+</div>
+
+<div class="thumbnail-wrapper">
+    <img src="./img/sample.jpg" data-detail="" data-bg="./img/sample.jpg" />
+    <br>
+                </div>
+
+<div class="thumbnail-wrapper">
+    <img src="./img/sample.jpg" data-detail="" data-bg="./img/sample.jpg" />
+    <br>
+                </div>
+
+<div class="thumbnail-wrapper">
+    <img src="./img/sample.jpg" data-detail="" data-bg="./img/sample.jpg" />
+    <br>
+  </div>
+</div>
+
+
+ <script>
+const mainImage = document.getElementById('mainImage');
+const mainDisplay = document.getElementById('mainDisplay');
+const thumbnailWrappers = document.querySelectorAll('#thumbnailContainer .thumbnail-wrapper');
+
+let currentIndex = 0;
+
+const updateDisplay = (index) => {
+  const selectedWrapper = thumbnailWrappers[index];
+  const selectedImg = selectedWrapper.querySelector('img');
+
+  if (!selectedImg) return;
+
+  // Update main image
+  mainImage.src = selectedImg.dataset.bg || '';
+  mainImage.alt = selectedImg.alt || 'Preview';
+
+  // Remove active from all thumbnails
+  thumbnailWrappers.forEach(wrapper => {
+    const img = wrapper.querySelector('img');
+    img.classList.remove('active');
+  });
+
+  // Add active to clicked thumbnail
+  selectedImg.classList.add('active');
+
+  // Show the button for this thumbnail
+  thumbnailWrappers.forEach(wrapper => {
+    const btn = wrapper.querySelector('.choice-card');
+    btn.classList.add('hidden');
+  });
+  const button = selectedWrapper.querySelector('.choice-card');
+  button.classList.remove('hidden');
+};
+
+// Thumbnail click
+thumbnailWrappers.forEach((wrapper, index) => {
+  const img = wrapper.querySelector('img');
+  img.addEventListener('pointerdown', () => {
+    currentIndex = index;
+    updateDisplay(index);
+  });
+});
+
+// Initial setup
+updateDisplay(currentIndex);
+
+
+</script>
+
+        </div>
+        <div class="col-sm-5" style="padding-top: 40px;">
+           <ul>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo temporibus debitis aut obcaecati autem, inventore laboriosam numquam</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ut, qui, totam fuga ab quidem.</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus perferendis reiciendis consectetur est molestias aspernatur placeat</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. In similique voluptatibus, sunt tempora iure.</li>
+    </ul>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs" id="cardTabs">
+        <!-- Tabs generated dynamically -->
+      </ul>
+    </div>
+    <div class="card-body" id="cardBody">
+      <!-- Content rendered here -->
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Fade effect */
+  .fade {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .fade.show {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  const tabData = [
+    {
+      title: "Tab 1 Title",
+      text: `<p>This is content for tab 1.</p>
+             <ul><li>Point 1</li><li>Point 2</li></ul>`,
+      btnText: "Go somewhere",
+      btnLink: "#"
+    },
+    {
+      title: "Tab 2 Title",
+      text: `<p>Content for tab 2 with an image:</p>
+             <img src="https://via.placeholder.com/150" alt="example image" class="img-fluid">`,
+      btnText: "Learn more",
+      btnLink: "#"
+    },
+    {
+      title: "Tab 3 Title",
+      text: `<p>Tab 3 content can include <strong>HTML tags</strong> freely.</p>
+             <ol><li>First</li><li>Second</li></ol>`,
+      btnText: "Check it out",
+      btnLink: "#"
+    }
+  ];
+
+  const cardTabs = document.getElementById('cardTabs');
+  const cardBody = document.getElementById('cardBody');
+
+  // Generate tabs
+  tabData.forEach((tab, index) => {
+    const li = document.createElement('li');
+    li.className = "nav-item";
+
+    const a = document.createElement('a');
+    a.className = "nav-link" + (index === 0 ? " active" : "");
+    a.href = "#";
+    a.textContent = "Tab " + (index + 1);
+    a.dataset.index = index;
+
+    li.appendChild(a);
+    cardTabs.appendChild(li);
+  });
+
+  // Function to display content with fade
+  function showContent(index) {
+    cardBody.classList.remove('show');
+    setTimeout(() => {
+      const tab = tabData[index];
+      cardBody.innerHTML = `
+        <h5 class="card-title">${tab.title}</h5>
+        <div class="card-text">${tab.text}</div>
+        <a href="${tab.btnLink}" class="btn btn-primary">${tab.btnText}</a>
+      `;
+      cardBody.classList.add('fade', 'show');
+    }, 200); // Delay to allow fade-out
+  }
+
+  // Initial content
+  cardBody.classList.add('fade', 'show');
+  showContent(0);
+
+  // Tab click event
+  const tabs = cardTabs.querySelectorAll('.nav-link');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', e => {
+      e.preventDefault();
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      showContent(tab.dataset.index);
+    });
+  });
+</script>
+
+<br><br><br>
+
+<div class="container">
+
+<div class="card">
+  <h5 class="card-header">Featured</h5>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  </div>
+</div>
+
+</div>
+
+<br><br><br>
+
+<div class="container">
+
+<div class="card">
+  <h5 class="card-header">Featured</h5>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  </div>
+</div>
+
+</div>
+
+<br><br><br><br>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+ 
+
+  <!-- Section: Links  -->
+  <section id="footer" class="" style="padding-top: 6px; background-color: rgb(48, 48, 48);">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Company name
+          </h6>
+           <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptates distinctio amet quod laudantium molestias alias perferendis officiis repellendus provident qui, quos facere.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Angular</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">React</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Vue</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Laravel</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            info@example.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div id="footer" class="text-left p-4" style="background-color: rgb(39, 39, 39);">
+    © 2025 LOREM INTERNATIONAL Co., Ltd. all rights reserved
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+
+    <script
+      src="../assets/dist/js/bootstrap.bundle.min.js"
+      class="astro-vvvwv3sm"
+    ></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+</body>
+</html>
