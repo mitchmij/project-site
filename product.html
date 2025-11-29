@@ -147,13 +147,13 @@
             href="/"
             class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none" style="font-size:x-large; font-weight: bolder;"
           >
-        LOREM
+            <img src="/./img/Logo - Kabellab (R)-Original-2022-01.png" alt="Bootstrap" width="300px" height="auto">
     
           </a>
              <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto align-items-center">
-  <a class="navhover me-3 py-2 link-body-emphasis text-decoration-none" href="#" style="font-size: small;">HOME</a>
+  <a class="navhover me-3 py-2 link-body-emphasis text-decoration-none" href="#" style="font-size: small;" hidden>HOME</a>
 
-  <a class="navhover me-3 py-2 link-body-emphasis text-decoration-none" href="#" style="font-size: small;">SOLUTIONS</a>
+  <a class="navhover me-3 py-2 link-body-emphasis text-decoration-none" href="#" style="font-size: small;" hidden>SOLUTIONS</a>
 
  <a class="navhover me-3 py-2 link-body-emphasis text-decoration-none active"
      href="index.html"
@@ -161,9 +161,9 @@
      PRODUCTS
   </a>
 
-  <a class="navhover me-3 py-2 link-body-emphasis text-decoration-none" href="#" style="font-size: small;">RESOURCES</a>
+  <a class="navhover me-3 py-2 link-body-emphasis text-decoration-none" href="#" style="font-size: small;" hidden>RESOURCES</a>
 
-  <a class="navhover me-3 py-2 link-body-emphasis text-decoration-none" href="#" style="font-size: small;">SUPPORT CENTER</a>
+  <a class="navhover me-3 py-2 link-body-emphasis text-decoration-none" href="#" style="font-size: small;" hidden>SUPPORT CENTER</a>
 
   <!-- COLLAPSE BUTTON -->
   <a class="btn-sm ms-2" data-bs-toggle="collapse" href="" role="button" style="color: black;">
@@ -196,34 +196,40 @@
     <!-- Sidebar -->
 <div class="col-sm-3">
 
-  <!-- CATEGORY BOX -->
-  <div class="category-box">
-   <div class="category-header" onclick="toggleDropdown()">
-   <span style="font-weight:600; font-size: 16px;">Select a Category</span><i class='arrow bx  bx-chevron-right'    ></i> 
+
+<div class="category-box">
+  <!-- MAIN HEADER -->
+  <div class="category-header" onclick="toggleMain()">
+    <span style="font-weight:bold; font-size: 16px;">Select a Category</span>
+    <i class='arrow bx bx-chevron-right'></i>
+  </div>
+
+  <div class="category-dropdown" id="mainCategories">
+    <!-- Categories will be injected here -->
+  </div>
 </div>
 
-    <div class="category-dropdown">
-      <div class="category-item">Category 1</div>
-      <div class="category-item">Category 2</div>
-      <div class="category-item">Category 3</div>
-    </div>
-  </div>
+
+<script>
+
+</script>
+
 
 
   <!-- FILTER BOX -->
-  <div class="filter-box p-3 shadow-sm bg-white rounded">
+  <div class="filter-box p-3 shadow-sm" >
 
     <!-- Header -->
     <div class="d-flex justify-content-between align-items-center mb-2">
-      <span class="font-weight-bold">Select by Filter</span>
-      <a href="#" class="text-primary small">Clear</a>
+      <span style="font-weight:bold; font-size: 16px;">Select by Filter</span>
+      <a href="#" class="text-dark small">Clear</a>
     </div>
 
     <hr>
 
     <!-- FILTER GROUP 1 -->
     <div class="mb-3">
-      <div class="font-weight-bold mb-2">Number of Computers</div>
+      <div class="font-weight-bold mb-2" style="color: #F1592A;">Number of Computers</div>
       <div class="form-check mb-2">
         <input class="form-check-input" type="checkbox" id="comp1">
         <label class="form-check-label" for="comp1">1 (2)</label>
@@ -238,11 +244,12 @@
       </div>
     </div>
 
+
     <hr>
 
     <!-- FILTER GROUP 2 -->
     <div class="mb-3">
-      <div class="font-weight-bold mb-2">Console Interface</div>
+      <div class="font-weight-bold mb-2" style="color: #F1592A;">Console Interface</div>
       <div class="form-check mb-2">
         <input class="form-check-input" type="checkbox" id="ps2">
         <label class="form-check-label" for="ps2">PS/2 (2)</label>
@@ -265,218 +272,524 @@
       </div>
     </div>
 
+    
+    <hr>
+
+
+      <!-- FILTER GROUP 3 -->
+    <div class="mb-3">
+      <div class="font-weight-bold mb-2" style="color: #F1592A;">Special Features</div>
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="ps2">
+        <label class="form-check-label" for="ps2">Boundless Switching (1)</label>
+      </div>
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="usb">
+        <label class="form-check-label" for="usb">BIOS Level Control (2)</label>
+      </div>
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="vga">
+        <label class="form-check-label" for="vga">BIOS Level Control (2)</label>
+      </div>
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="dvi">
+        <label class="form-check-label" for="dvi">USB Peripheral (12)</label>
+      </div>
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="hdmi">
+        <label class="form-check-label" for="hdmi">Firmware Upgradable (5)</label>
+      </div>
+    </div>
+
+
   </div>
 
 </div>
 
 <!-- CSS -->
-<style>
-.category-box, .filter-box {
-  width: 100%;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
 
-.category-box {
-  background-color: rgb(248, 253, 253);
-  margin-bottom: 10px;
-}
+    <!-- Main Content -->
+<div class="col-sm-9">
+<h2 id="pageTitle" style="font-weight: lighter;"></h2>
+<br>
+<div class="row row-cols-1 row-cols-md-3 g-3" id="productGrid"></div>
+</div>
+</div>
+</div>
 
-.category-header {
-  padding: 10px;
-  font-weight: bold;
-}
-
-.category-dropdown {
-  display: none;
-  flex-direction: column;
-}
-
-.category-item {
-  padding: 10px;
-  border-top: 1px solid #eee;
-}
-
-.category-item:hover {
-  background-color: #e0f7f7;
-}
-</style>
-
-<!-- JS -->
 <script>
-function toggleDropdown() {
-  const dropdown = document.querySelector('.category-dropdown');
-  dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+  // Your full data
+  const data = [
+    {
+      name: "LabActiv",
+      productTitles: [
+        {
+          title: "LabActiv-IoT",
+          products: [
+            { name: "AM100", img: "./img/(LabActiv) Active Equipment/LabActiv-IoT/AM100/AM-右.png", text: "Description 1" },
+              { name: "EM500", img: "./img/(LabActiv) Active Equipment/LabActiv-IoT/EM500/EM500.PAR.png", text: "Description 2" },
+                { name: "N1中性", img: "./img/(LabActiv) Active Equipment/LabActiv-IoT/N1中性/UC11-N1_俯视.png", text: "Description 3" },
+                  { name: "T1中性", img: "./img/(LabActiv) Active Equipment/LabActiv-IoT/T1中性/右侧.png", text: "Description 4" },
+                    { name: "UG85", img: "./img/(LabActiv) Active Equipment/LabActiv-IoT/UG85/UG85-右.png", text: "Description 5" },
+                { name: "UG87室外网关", img: "./img/(LabActiv) Active Equipment/LabActiv-IoT/UG87室外网关/UG87_20190816s(2).459.png", text: "Description 6" },
+                  { name: "UR32 俯视2", img: "./img/(LabActiv) Active Equipment/LabActiv-IoT/UR32 俯视2/UR32 俯视2.png", text: "Description 7" },
+                    { name: "UR35 中性", img: "./img/(LabActiv) Active Equipment/LabActiv-IoT/UR35 中性/UR32+35---副本.png", text: "Description 8" }
+          ]
+        },
+          {
+          title: "LabActiv-MS2",
+          products: [
+            { name: "LabActiv-MS2", img: "./img/(LabActiv) Active Equipment/LabActiv-MS2/0G4A0676.png", text: "Description 1" }
+          ]
+        },
+          {
+          title: "LabActiv-REVO 1",
+          products: [
+            { name: "LabActiv-REVO 1", img: "./img/(LabActiv) Active Equipment/LabActiv-REVO 1/0G4A0742.png", text: "Description 1" }
+          ]
+        },
+          {
+          title: "LabActiv-REVO 1 (H)",
+          products: [
+            { name: "LabActiv-REVO 1 (H)", img: "./img/(LabActiv) Active Equipment/LabActiv-REVO 1 (H)/0G4A0733.png", text: "Description 1" }
+          ]
+        },
+          {
+          title: "LabActiv-REVO 2",
+          products: [
+            { name: "LabActiv-REVO 2", img: "./img/(LabActiv) Active Equipment/LabActiv-REVO 2/0G4A2916.png", text: "Description 1" }
+          ]
+        },
+        
+          {
+          title: "LabActiv-REVO 4",
+          products: [
+            { name: "LabActiv-REVO 4", img: "./img/(LabActiv) Active Equipment/LabActiv-REVO 4/0G4A0731.png", text: "Description 1" }
+          ]
+        },
+        
+          {
+          title: "LabActiv-REVO 8",
+          products: [
+            { name: "LabActiv-REVO 8", img: "./img/(LabActiv) Active Equipment/LabActiv-REVO 8/0G4A0730.png", text: "Description 1" }
+          ]
+        },
+          {
+          title: "LabActiv-REVO 8F",
+          products: [
+            { name: "LabActiv-REVO 8F", img: "./img/(LabActiv) Active Equipment/LabActiv-REVO 8F/0G4A0727.png", text: "Description 1" }
+          ]
+        },
+          {
+          title: "LabActiv-REVO 16",
+          products: [
+            { name: "LabActiv-REVO 16", img: "./img/(LabActiv) Active Equipment/LabActiv-REVO 16/0G4A0728.png", text: "Description 1" }
+          ]
+        },
+          {
+          title: "LabActiv-SFP 10G Copper",
+          products: [
+            { name: "LabActiv-SFP 10G Copper", img: "./img/(LabActiv) Active Equipment/LabActiv-SFP 10G Copper/LabActiv-SFP-10G-Copper-1.png", text: "Description 1" }
+          ]
+        }
+      ]
+    },
+    {
+      name: "LabFrame",
+      productTitles: [
+        {
+          title: "LabFrame-948 (DC Containment)",
+          products: [
+            { name: "NER2-45-ISO", img: "./img/(LabFrame) Racks/LabFrame-948 (DC Containment)/NER2-45-ISO.png", text: "Description 1" }
+          ]
+        },
+         {
+          title: "LabFrame-NER2 (Server Rack 42U)",
+          products: [
+            { name: "NER2--45", img: "./img/(LabFrame) Racks/LabFrame-NER2 (Server Rack 42U)/NER2--45.png", text: "Description 1" }
+          ]
+        },
+         {
+          title: "LabFrame-Open Q15 (Open Rack 15U)",
+          products: [
+            { name: "Q15-45", img: "./img/(LabFrame) Racks/LabFrame-Open Q15 (Open Rack 15U)/Q15-45.png", text: "Description 1" }
+          ]
+        },
+         {
+          title: "LabFrame-Open Q24 (Open Rack 24U)",
+          products: [
+            { name: "Q24-45", img: "./img/(LabFrame) Racks/LabFrame-Open Q24 (Open Rack 24U)/Q24-45.png", text: "Description 1" }
+          ]
+        },
+         {
+          title: "LabFrame-Open Q36 (Open Rack 36U)",
+          products: [
+            { name: "Q36-45", img: "./img/(LabFrame) Racks/LabFrame-Open Q36 (Open Rack 36U)/Q36-45.png", text: "Description 1" }
+          ]
+        },
+         {
+          title: "LabFrame-Open Q42 (Open Rack 42U)",
+          products: [
+            { name: "Q42-45", img: "./img/(LabFrame) Racks/LabFrame-Open Q42 (Open Rack 42U)/Q42-45.png", text: "Description 1" }
+          ]
+        },
+         {
+          title: "LabFrame-Open Q42E (Open Rack 42U Ex)",
+          products: [
+            { name: "LabFrame-Open Q42E (Open Rack 42U Ex)", img: "./img/(LabFrame) Racks/LabFrame-Open Q42E (Open Rack 42U Ex)/006.png", text: "Description 1" }
+          ]
+        }
+      ]
+    },
+    {
+      name: "LabClean",
+      productTitles: [
+        {
+          title: "(LabClean) Cleaning Products",
+          products: [
+            { name: "Cleaning Product 1", img: "./img/(LabClean) Cleaning Products/17.png", text: "Description 1" }
+          ]
+        }
+      ]
+    },
+    {
+      name: "LabGuide",
+      productTitles: [
+        {
+          title: "LabGuide (1U Cable Management)",
+          products: [
+            { name: "LabGuide (1U Cable Management)", img: "./img/(LabGuide) Cable Management/LabGuide (1U Cable Management)/LabGuide (1U Cable Management) (2).png", text: "Description 1" }
+          ]
+        },
+        {
+          title: "LabGuide-1U Box",
+          products: [
+            { name: "LabGuide-1U Box", img: "./img/(LabGuide) Cable Management/LabGuide-1U Box/LabGuide-1U Box Images (1).png", text: "Description 1" }
+          ]
+        },
+        {
+          title: "LabGuide-2U Box",
+          products: [
+            { name: "LabGuide-2U Box", img: "./img/(LabGuide) Cable Management/LabGuide-2U Box/LabGuide-2U Box Images (1).png", text: "Description 1" }
+          ]
+        },
+        {
+          title: "LabGuide-2U",
+          products: [
+            { name: "LabGuide-2U", img: "./img/(LabGuide) Cable Management/LabGuide-2U/LabGuide-2U Images (1).png", text: "Description 1" }
+          ]
+        },
+      ]
+    },
+      {
+      name: "LabOSP",
+      productTitles: [
+        {
+          title: "Accessory",
+          products: [
+            { name: "Accessory", img: "./img/(LabOSP) OutSide Plant/Accessory/WechatIMG2967.png", text: "Description 1" }
+          ]
+        },
+          {
+          title: "Cable Joint Box 0",
+          products: [
+            { name: "Joint-Box-0-45", img: "./img/(LabOSP) OutSide Plant/Cable Joint Box 0/Joint-Box-0-45.png", text: "Description 1" }
+          ]
+        },
+          {
+          title: "Cable Joint Box 1",
+          products: [
+            { name: "Joint-Box-1-45", img: "./img/(LabOSP) OutSide Plant/Cable Joint Box 1/Joint-Box-1-45.png", text: "Description 1" }
+          ]
+        },
+          {
+          title: "Cable Joint Box 2",
+          products: [
+            { name: "Joint-Box-2-45-Left", img: "./img/(LabOSP) OutSide Plant/Cable Joint Box 2/Joint-Box-2-45-Left.png", text: "Description 1" }
+          ]
+        },
+          {
+          title: "CJB 1 Cover",
+          products: [
+            { name: "CJB 1 Cover", img: "./img/(LabOSP) OutSide Plant/CJB 1 Cover/With Hinge/WechatIMG4281.png", text: "Description 1" }
+          ]
+        },
+        
+          {
+          title: "FJB 0 Cover",
+          products: [
+            { name: "FJB 0 Cover", img: "./img/(LabOSP) OutSide Plant/FJB 0 Cover/B125/WechatIMG3597.png", text: "Description 1" }
+          ]
+        },
+        
+          {
+          title: "FJB 3 Cover",
+          products: [
+            { name: "FJB 3 Cover", img: "./img/(LabOSP) OutSide Plant/FJB 3 Cover/B125/WechatIMG3611.png", text: "Description 1" }
+          ]
+        },
+          {
+          title: "FJB 4 Cover",
+          products: [
+            { name: "FJB 4 Cover", img: "./img/(LabOSP) OutSide Plant/FJB 4 Cover/B125/WechatIMG3606.png", text: "Description 1" }
+          ]
+        },
+          {
+          title: "Functional",
+          products: [
+            { name: "Functional", img: "./img/(LabOSP) OutSide Plant/Functional/Family-1.png", text: "Description 1" }
+          ]
+        },
+          {
+          title: "LabActiv-SFP 10G Copper",
+          products: [
+            { name: "LabActiv-SFP 10G Copper", img: "./img/(LabActiv) Active Equipment/LabActiv-SFP 10G Copper/LabActiv-SFP-10G-Copper-1.png", text: "Description 1" }
+          ]
+        }
+      ]
+    },
+    {
+      name: "LabPanel",
+      productTitles: [
+        {
+          title: "LabPanel - Imaginatus III (1U Fiber Patch Panel)",
+          products: [
+            { name: "0G4A8784", img: "./img/(LabPanel) Patch Panel & Box/LabPanel - Imaginatus III (1U Fiber Patch Panel)/0G4A8784.png", text: "Description 1" }
+          ]
+        },
+        {
+          title: "LabPanel-Angle (Copper Patch Panel)",
+          products: [
+            { name: "0G4A0871", img: "./img/(LabPanel) Patch Panel & Box/LabPanel-Angle (Copper Patch Panel)/0G4A0871.png", text: "Description 1" }
+          ]
+        },
+        {
+          title: "LabPanel-FTB Images (FTTH Termination)",
+          products: [
+            { name: "0G4A0357", img: "./img/(LabPanel) Patch Panel & Box/LabPanel-FTB Images (FTTH Termination)/0G4A0357.png", text: "Description 1" }
+          ]
+        },
+        {
+          title: "LabPanel-S (Copper Patch Panel)",
+          products: [
+            { name: "0G4A1054", img: "./img/(LabPanel) Patch Panel & Box/LabPanel-S (Copper Patch Panel)/0G4A1054.png", text: "Description 1" }
+          ]
+        },
+      ]
+    },
+    {
+      name: "LabPatch",
+      productTitles: [
+        {
+          title: "LabPatch Copper Patch Cord",
+          products: [
+            { name: "LabPatch-6 (Cat6 Patch Cord)", img: "./img/(LabPatch) Patch Cord/LabPatch Copper Patch Cord/LabPatch-6 (Cat6 Patch Cord)/0G4A8471.png", text: "Description 1" },
+            { name: "LabPatch-10 (Cat6A Patch Cord)", img: "./img/(LabPatch) Patch Cord/LabPatch Copper Patch Cord/LabPatch-10 (Cat6A Patch Cord)/0G4A6798.png", text: "Description 1" }
+          ]
+        },
+           {
+          title: "LabPatch Fiber Optic Patch",
+          products: [
+            { name: "OM3 MPO MTX", img: "./img/(LabPatch) Patch Cord/LabPatch Fiber Optic Patch/OM3 MPO MTX/0G4A6783.png", text: "Description 1" },
+            { name: "OM4 MPO MTX", img: "./img/(LabPatch) Patch Cord/LabPatch Fiber Optic Patch/OM4 MPO MTX/0G4A8491.png", text: "Description 1" },
+            { name: "SM MPO MTX", img: "./img/(LabPatch) Patch Cord/LabPatch Fiber Optic Patch/SM MPO MTX/0G4A8482.png", text: "Description 1" }
+          ]
+        },
+      ]
+    },
+    {
+      name: "LabPlug",
+      productTitles: [
+        {
+          title: "LabPlug-6 (Cat 6)",
+          products: [
+            { name: "0G4A0331", img: "./img/(LabPlug) RJ45 Connector/LabPlug-6 (Cat 6)/0G4A0331.png", text: "Description 1" }
+          ]
+        },
+           {
+          title: "LabPlug-10 (Cat6A)",
+          products: [
+            { name: "0G4A0346", img: "./img/(LabPlug) RJ45 Connector/LabPlug-10 (Cat6A)/0G4A0346.png", text: "Description 1" }
+          ]
+        },
+      ]
+    },
+    {
+      name: "LabPort",
+      productTitles: [
+        {
+          title: "LabPort-6",
+          products: [
+            { name: "0G4A0329", img: "./img/(LabPort) Keystone Jack/LabPort-6/0G4A0329.png", text: "Description 1" }
+          ]
+        },
+           {
+          title: "LabPort-10",
+          products: [
+            { name: "0G4A0344", img: "./img/(LabPort) Keystone Jack/LabPort-10/0G4A0344.png", text: "Description 1" }
+          ]
+        },
+      ]
+    },
+    {
+      name: "LabPower",
+      productTitles: [
+        {
+          title: "(LabPower) ATS",
+          products: [
+            { name: "(LabPower) ATS", img: "./img/(LabPower) ATS/(LabPower) ATS/0G4A9890.png", text: "Description 1" }
+          ]
+        }
+      ]
+    },
+    {
+      name: "LabTag",
+      productTitles: [
+        {
+          title: "(LabTag) Label Tag",
+          products: [
+            { name: "(LabTag) Label Tag", img: "./img/(LabTag) Label Tag/(LabTag) Label Tag/379A8335.png", text: "Description 1" }
+          ]
+        }
+      ]
+    }
+  ];
+
+  // Generate categories dynamically
+const mainCategories = document.getElementById("mainCategories");
+
+data.forEach((category, index) => {
+  // Create main category div
+  const catDiv = document.createElement("div");
+  catDiv.classList.add("category-item");
+  const subId = `sub${index}`;
+  catDiv.setAttribute("onclick", `toggleSub('${subId}', this)`);
+  catDiv.innerHTML = `${category.name} <span class="plus">+</span>`;
+  mainCategories.appendChild(catDiv);
+
+  // Create subcategory container
+  const subDiv = document.createElement("div");
+  subDiv.classList.add("subcategory-dropdown");
+  subDiv.id = subId;
+
+  category.productTitles.forEach(subcat => {
+    const subItem = document.createElement("div");
+    subItem.classList.add("subcategory-item");
+ subItem.textContent = subcat.title;
+
+ // ADD HR DIVIDER AFTER EACH SUBCATEGORY
+  const divider = document.createElement("hr");
+  divider.style.margin = "6px 0px";
+  divider.style.marginRight = "20px";
+
+subItem.addEventListener("click", (event) => {
+  event.stopPropagation();
+
+  // Highlight subcategory
+  document.querySelectorAll(".subcategory-item").forEach(s => s.classList.remove("active"));
+  subItem.classList.add("active");
+
+  // Highlight category (parent)
+  document.querySelectorAll(".category-item").forEach(c => c.classList.remove("active"));
+  catDiv.classList.add("active");
+
+  // Load title
+  pageTitle.textContent = subcat.title;
+
+  // Clear old products
+  productGrid.innerHTML = "";
+
+  // Load products
+  subcat.products.forEach(product => {
+    const cardHTML = `
+      <div class="col">
+        <a href="product_detail.html" class="card-link-wrapper text-decoration-none">
+          <div class="card h-100 text-center card-hover">
+            <img src="${product.img}" class="card-img-top" alt="${product.name}" id="product-img">
+            <div class="card-body text-start">
+              <h5>${product.name}</h5>
+              <p style="font-size:14px;">${product.text}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    `;
+    productGrid.insertAdjacentHTML("beforeend", cardHTML);
+  });
+});
+
+
+subDiv.appendChild(subItem);
+  subDiv.appendChild(divider);
+
+  });
+
+  mainCategories.appendChild(subDiv);
+});
+
+// Toggle functions
+function toggleMain() {
+  const main = document.getElementById("mainCategories");
+  main.style.display = main.style.display === "block" ? "none" : "block";
 }
+
+function toggleSub(id, element) {
+  const sub = document.getElementById(id);
+  const icon = element.querySelector(".plus");
+
+  if (sub.style.display === "block") {
+    sub.style.display = "none";
+    icon.textContent = "+";
+    return;
+  }
+
+  document.querySelectorAll(".subcategory-dropdown").forEach(el => el.style.display = "none");
+  document.querySelectorAll(".plus").forEach(p => p.textContent = "+");
+
+  sub.style.display = "block";
+  icon.textContent = "−";
+} 
+
+  // Get selected product title from URL
+  const params = new URLSearchParams(window.location.search);
+  const selectedTitle = params.get("title");
+
+  // Find the product title object across all categories
+  let foundTitle = null;
+  for (const category of data) {
+    foundTitle = category.productTitles.find(pt => pt.title === selectedTitle);
+    if (foundTitle) break;
+  }
+
+  const pageTitle = document.getElementById("pageTitle");
+  const productGrid = document.getElementById("productGrid");
+
+  if (foundTitle) {
+    pageTitle.textContent = foundTitle.title;
+
+    // Render all products under this title
+    foundTitle.products.forEach(product => {
+      const cardHTML = `
+        <div class="col">
+             <a href="product_detail.html" class="card-link-wrapper text-decoration-none">
+          <div class="card h-100 text-center card-hover">
+            <img src="${product.img}" class="card-img-top" alt="${product.name}" id="product-img">
+            <div class="card-body text-start">
+              <h5>${product.name}</h5>
+              <p style="font-size:14px;">${product.text}</p>
+            </div>
+          </div>
+          </a>
+        </div>
+      `;
+      productGrid.insertAdjacentHTML("beforeend", cardHTML);
+    });
+  } else {
+    pageTitle.textContent = "Product Title Not Found";
+  }
 </script>
 
 
-
-
-    <!-- Main Content -->
-    <div class="col-sm-9">
-       <h2 class="mb-0" style="font-weight: lighter; color: rgb(4, 63, 139);">Product Titles</h2>
-      <br>
-
-      <!-- Product Grid -->
-      <div class="row row-cols-1 row-cols-md-4 g-4">
-
-        <!-- Product Card Template -->
-        <div class="col">
-          <a href="product_detail.html" class="card-link-wrapper text-decoration-none">
-            <div class="card h-100 text-center card-hover">
-              <img src="./img/sample.jpg" class="card-img-top" alt="">
-     <div class="card-body d-flex flex-column justify-content-between text-start">
-                <hr>
-                <div style="padding-top: 10px;">
-                  <h5 class="card-title">Title 01</h5>
-                  <p class="card-text" style="font-size: 14px;">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis minima dolorum, sed laborum mollitia
-                  </p>
-                  <br>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col">
-          <a href="product_detail.html" class="card-link-wrapper text-decoration-none">
-            <div class="card h-100 text-center card-hover">
-              <img src="./img/sample.jpg" class="card-img-top" alt="">
-      <div class="card-body d-flex flex-column justify-content-between text-start">
-                <hr>
-                  <div style="padding-top: 10px;">
-                  <h5 class="card-title">Title 02</h5>
-                  <p class="card-text" style="font-size: 14px;">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis minima dolorum, sed laborum mollitia
-                  </p>
-                  <br>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col">
-          <a href="product_detail.html" class="card-link-wrapper text-decoration-none">
-            <div class="card h-100 text-center card-hover">
-              <img src="./img/sample.jpg" class="card-img-top" alt="">
-           <div class="card-body d-flex flex-column justify-content-between text-start">
-                <hr>
-              <div style="padding-top: 10px;">
-                  <h5 class="card-title">Title 03</h5>
-                  <p class="card-text" style="font-size: 14px;">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis minima dolorum, sed laborum mollitia
-                  </p>
-                  <br>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col">
-          <a href="product_detail.html" class="card-link-wrapper text-decoration-none">
-            <div class="card h-100 text-center card-hover">
-              <img src="./img/sample.jpg" class="card-img-top" alt="">
-           <div class="card-body d-flex flex-column justify-content-between text-start">
-                <hr>
-                  <div style="padding-top: 10px;">
-                  <h5 class="card-title">Title 04</h5>
-                  <p class="card-text" style="font-size: 14px;">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis minima dolorum, sed laborum mollitia
-                  </p>
-                  <br>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-      </div>
-
-      <br><br>
-
-      <!-- Second Row of Products -->
-      <div class="row row-cols-1 row-cols-md-4 g-4">
-        <!-- Repeat Product Cards for Titles 05-08 -->
-        <div class="col">
-          <a href="product_detail.html" class="card-link-wrapper text-decoration-none">
-            <div class="card h-100 text-center card-hover">
-              <img src="./img/sample.jpg" class="card-img-top" alt="">
-           <div class="card-body d-flex flex-column justify-content-between text-start">
-                <hr>
-              <div style="padding-top: 10px;">
-                  <h5 class="card-title">Title 05</h5>
-                  <p class="card-text" style="font-size: 14px;">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis minima dolorum, sed laborum mollitia
-                  </p>
-                  <br>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col">
-          <a href="product_detail.html" class="card-link-wrapper text-decoration-none">
-            <div class="card h-100 text-center card-hover">
-              <img src="./img/sample.jpg" class="card-img-top" alt="">
-  <div class="card-body d-flex flex-column justify-content-between text-start">
-                <hr>
-                <div style="padding-top: 10px;">
-                  <h5 class="card-title">Title 06</h5>
-                  <p class="card-text" style="font-size: 14px;">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis minima dolorum, sed laborum mollitia
-                  </p>
-                  <br>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col">
-          <a href="product_detail.html" class="card-link-wrapper text-decoration-none">
-            <div class="card h-100 text-center card-hover">
-              <img src="./img/sample.jpg" class="card-img-top" alt="">
-   <div class="card-body d-flex flex-column justify-content-between text-start">
-                <hr>
-               <div style="padding-top: 10px;">
-                  <h5 class="card-title">Title 07</h5>
-                  <p class="card-text" style="font-size: 14px;">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis minima dolorum, sed laborum mollitia
-                  </p>
-                  <br>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col">
-          <a href="product_detail.html" class="card-link-wrapper text-decoration-none">
-            <div class="card h-100 text-center card-hover">
-              <img src="./img/sample.jpg" class="card-img-top" alt="">
-   <div class="card-body d-flex flex-column justify-content-between text-start">
-                <hr>
-            <div style="padding-top: 10px;">
-                  <h5 class="card-title">Title 08</h5>
-                  <p class="card-text" style="font-size: 14px;">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis minima dolorum, sed laborum mollitia
-                  </p>
-                  <br>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <br><br><br><br><br>
@@ -486,7 +799,21 @@ function toggleDropdown() {
  
 
   <!-- Section: Links  -->
-  <section id="footer" class="" style="padding-top: 6px; background-color: rgb(48, 48, 48);">
+  <section id="footer" class="" style="padding-top: 6px; background-color: #343a3f;">
+
+
+      <section class="d-flex justify-content-center justify-content-lg-between p-2" style="background-color: #343a3f; margin-top: 10px;">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>For product inquiries, please email to <span style="color: #F1592A;">info@kabellab.com</span></span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+ 
+    <!-- Right -->
+  </section>
+<hr>
     <div class="container text-center text-md-start mt-5">
       <!-- Grid row -->
       <div class="row mt-3">
@@ -494,10 +821,10 @@ function toggleDropdown() {
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Company name
+            <i class="fas fa-gem me-3"></i>KABELLAB
           </h6>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptates distinctio amet quod laudantium molestias alias perferendis officiis repellendus provident qui, quos facere.
+       <p style="font-size: small;">
+           Kabellab was established in 2009 by Brian who owns all the Kabellab products development and design. Kabellab has appointed agents/partners in a few countries, which are Brunei Darussalam, Malaysia, Taiwan & China.
           </p>
         </div>
         <!-- Grid column -->
@@ -506,19 +833,16 @@ function toggleDropdown() {
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
-            Products
+           Research & Design
           </h6>
-          <p>
-            <a href="#!" class="text-reset">Angular</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">React</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Vue</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Laravel</a>
+          <p style="font-size: smaller;">
+           Spg 845-10-43, Block C
+
+No.22, Kg Jangsak,
+
+Bandar Seri Begawan BF2720
+
+Brunei Darussalam
           </p>
         </div>
         <!-- Grid column -->
@@ -527,19 +851,14 @@ function toggleDropdown() {
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
-            Useful links
+            SEA Sales & Marketing
           </h6>
-          <p>
-            <a href="#!" class="text-reset">Pricing</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Settings</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Orders</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Help</a>
+          <p style="font-size: smaller;">
+           The Square @ One City
+T1-09-04, Jln USJ 25/1
+47650 Subang Jaya
+Selangor Darul Ehsan.
+Malaysia.
           </p>
         </div>
         <!-- Grid column -->
@@ -547,14 +866,16 @@ function toggleDropdown() {
         <!-- Grid column -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-          <p>
-            <i class="fas fa-envelope me-3"></i>
-            info@example.com
+          <h6 class="text-uppercase fw-bold mb-4">
+            Manufacturing & Production
+          </h6>
+          <p style="font-size: smaller;">
+            A Building, XinFa Industry Zone
+BiYuan Road Fenggang Town
+Dongguang
+Guangdong Province
+China
           </p>
-          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
         </div>
         <!-- Grid column -->
       </div>
@@ -564,8 +885,8 @@ function toggleDropdown() {
   <!-- Section: Links  -->
 
   <!-- Copyright -->
-  <div id="footer" class="text-left p-4" style="background-color: rgb(39, 39, 39);">
-    © 2025 LOREM INTERNATIONAL Co., Ltd. all rights reserved
+  <div id="footer" class="text-left p-4" style="background-color: #1C2125;">
+        © 2025 Kabellab | Simple & Nice. All rights reserved.
   </div>
   <!-- Copyright -->
 </footer>
