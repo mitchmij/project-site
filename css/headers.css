@@ -1,6 +1,22 @@
 body{
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: 'Kabellab', sans-serif;
+  /* Default font for the body */
 }
+
+@font-face {
+  font-family: 'Kabellab';
+  /* Name of the font */
+  src: url('./font/Kabellab.otf') format('opentype');
+  /* Format should be 'opentype' for .otf files */
+  font-weight: normal;
+  /* Define the weight for this font file */
+  font-style: normal;
+  /* Define the style for this font file */
+}
+
 
 .form-control-dark {
   border-color: var(--bs-gray);
@@ -100,7 +116,7 @@ body{
 
   .link-divider a {
     text-decoration: none; /* optional: remove underline */
-    color: #0d6efd; /* bootstrap primary color */
+    color: #F1592A; /* bootstrap primary color */
     margin: 0 0.5rem;
     position: relative;
   }
@@ -112,13 +128,24 @@ body{
     color: #000; /* divider color */
   }
 
+  #btnstyle{
+    border-radius: 0%;
+    border-color: #F1592A;
+    color: #F1592A;
+  }
+
   #btnstyle:hover{
 background-color: #222222;
 border-color: #222222;
+color: #ffffff;
+  }
+
+    #btnstyle2{
+    border-radius: 0%;
   }
 
 .navhover:hover {
-  color: #0d6efd !important;
+  color: #F1592A !important;
   text-decoration: underline;
 }
 
@@ -132,7 +159,7 @@ border-color: #222222;
 }
 
 .navhover.active {
-  color: #0d6efd !important; /* Bootstrap primary color */
+  color: #F1592A !important; /* Bootstrap primary color */
   font-weight: 600;
 }
 
@@ -167,7 +194,7 @@ border-color: #222222;
 
 
 .card-link-wrapper:hover .card-hover {
-  border: 1px solid #0d6efd !important; /* blue border */
+  border: 1px solid #F1592A !important; /* blue border */
   border-radius: 8px;
   transform: translateY(-1px);
   box-shadow: 0 0 15px rgba(0, 118, 255, 0.15);
@@ -177,13 +204,13 @@ border-color: #222222;
 /* Change background color when a list item is active */
 .list-group-item.active {
   background-color: #e2e3e4; /* your desired color */
-  color: #0d6efd; /* text color */
+  color: #F1592A; /* text color */
   border-color: #e2e3e4; /* optional, match border with background */
   font-weight: bold;
 }
 
 .list-group-item:hover {
-  color: #0d6efd; /* text color */
+  color: #F1592A; /* text color */
   cursor: pointer;
 }
 
@@ -197,19 +224,95 @@ border-color: #222222;
 }
 
 .category-header {
-  padding: 10px;
-  font-weight: bold;
+  padding: 20px;
   display: flex;
   justify-content: space-between; /* Text left, arrow right */
   align-items: center;
   cursor: pointer;
+  background-color:#f8f8f8;
+  border-radius: 6px;
 }
+
+
+.category-box {
+  border: none !important;
+  outline: none;
+  border-radius: 6px;
+  transition: outline 0.2s ease, color 0.2s ease;
+  margin-bottom: 10px;
+  background-color: rgb(248, 253, 253);
+}
+
+.category-box:hover {
+  outline: 1px solid #F1592A;
+  color: #F1592A;
+}
+
+.filter-box {
+  border: none !important;
+  outline: none;
+  border-radius: 6px;
+  transition: outline 0.2s ease, color 0.2s ease;
+  background-color:#f8f8f8;
+  font-size: 14px;
+}
+
+.category-dropdown {
+  display: none;
+  margin-top: 5px;
+}
+
+.category-item {
+  padding: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+}
+
+.plus {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.subcategory-dropdown {
+  display: none;
+  margin-left: 15px;
+}
+
+/* Highlight selected main category */
+.category-item.active {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #F1592A;
+}
+
+.category-item:hover {
+  font-weight: bold;
+  color: #1C2125;
+  background-color: none;
+}
+
+.subcategory-item.active {
+  font-weight: bold;
+  color: #F1592A;
+}
+
+.subcategory-item:hover {
+  font-weight: bold;
+  color: #1C2125;
+}
+
 
 .arrow {
   margin-left: 10px;
+  transition: .2s;
 }
+
 .arrow2 {
-  margin-left: 60px;
+  margin-left: 55px;
   font-size: 20px;
 }
 
@@ -230,4 +333,11 @@ border-color: #222222;
   background-color: #dbd9d9;
   color: #222222;
   font-size: 10px;
+}
+
+#product-img {
+  padding: 10px;
+  width: 210px;      /* Set the width to your desired size */
+  height: 200px;     /* Set the height to your desired size */
+  object-fit: contain; /* Ensures the image covers the area without distorting */
 }
