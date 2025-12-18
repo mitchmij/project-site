@@ -188,7 +188,12 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-8"></div>
+    <div class="col-sm-8">
+      <nav aria-label="breadcrumb" class="mb-3">
+  <ol class="breadcrumb" id="breadcrumb"></ol>
+</nav>
+
+    </div>
      <div class="col-sm-4">
       
     <form class="d-flex" role="search">
@@ -287,7 +292,7 @@
       name: "LabOSP",
       count: 9,
       products: [
-        { title: "Accessory", text: "Kabellab products are meticulously designed for easy installation while maintaining the highest quality with an aesthetically pleasing design.", img: "./img/(LabOSP) OutSide Plant/Accessory/WechatIMG2967.png" },
+        { title: "Accessory", text: "Kabellab products are meticulously designed for easy installation while maintaining the highest quality with an aesthetically pleasing design.", img: "./img/(LabOSP) OutSide Plant/Accessory/accessory (10).png" },
         { title: "Cable Joint Box 0", text: "LabOSP Cable Joint Box manhole system is designed for underground network access, especially for fiber optical and electricity industries.", img: "./img/(LabOSP) OutSide Plant/Cable Joint Box 0/Joint-Box-0-45.png" },
         { title: "Cable Joint Box 1", text: "LabOSP Cable Joint Box manhole system is designed for underground network access, especially for fiber optical and electricity industries.", img: "./img/(LabOSP) OutSide Plant/Cable Joint Box 1/Joint-Box-1-45.png" },
         { title: "Cable Joint Box 2", text: "LabOSP Cable Joint Box manhole system is designed for underground network access, especially for fiber optical and electricity industries.", img: "./img/(LabOSP) OutSide Plant/Cable Joint Box 2/Joint-Box-2-45-Left.png" },
@@ -347,6 +352,7 @@
     }
   ];
 
+
   const categoryList = document.getElementById("categoryList");
   const cardContainer = document.getElementById("cardContainer");
 
@@ -366,32 +372,51 @@
 // 🔹 Function to render cards
 function renderCards(categoryIndex) {
   const category = data[categoryIndex];
-  cardContainer.innerHTML = ""; 
+  cardContainer.innerHTML = "";
 
   category.products.forEach(product => {
     const cardHTML = `
       <div class="col">
-        <a href="product.html?title=${encodeURIComponent(product.title)}" 
-           class="card-link-wrapper text-decoration-none">
+        <div class="card-link-wrapper text-decoration-none" onclick='openProductPage("${product.title}")'>
           <div class="card h-100 text-center card-hover">
             <img src="${product.img}" class="card-img-top" alt="${product.title}" id="product-img">
             <div class="card-body d-flex flex-column justify-content-between text-start">
               <div>
                 <h5 class="card-title" style="font-weight: lighter">${product.title}</h5>
-                <p class="card-text" style="font-weight: lighter; font-size: 14px">${product.text}</p>
+                <p class="card-text" style="font-weight: lighter; font-size: 14px">
+                  ${product.text}
+                </p>
               </div>
-              <br><br>
-              <div class="btn btn-dark mt-3" id="btnstyle2" style="color: #ffffff">Learn More</div>
+              <br>
+              <div class="btn btn-dark mt-3" id="btnstyle2">Learn More</div>
             </div>
           </div>
-        </a>
+        </div>
       </div>
     `;
     cardContainer.insertAdjacentHTML("beforeend", cardHTML);
   });
 }
 
+function openProductPage(title) {
 
+  // 🔹 Save selected product title
+  localStorage.setItem("selectedTitle", title);
+
+  // 🔹 Save breadcrumb
+  localStorage.setItem("breadcrumb", JSON.stringify({
+    level1: "Products",
+    level2: title
+  }));
+
+  // 🔹 Save page state
+  localStorage.setItem("productPageState", JSON.stringify({
+    source: "index",
+    title
+  }));
+
+  window.location.href = "product.html";
+}
 
 
 
@@ -530,6 +555,3 @@ China
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
 </body>
 </html>
-
-
-
