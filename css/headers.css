@@ -62,10 +62,17 @@ body{
       padding-top: 60px;
     }
 
-    #mainImage {
-  max-width: 480px;
-  max-height: auto;
-  object-fit: contain; /* or cover */
+
+#mainImage {
+  width: 300px;
+  object-fit: contain;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#mainImage:hover {
+  transform: scale(1.9);
+  cursor: pointer;
+  z-index: 1000;
 }
 
 
@@ -74,41 +81,41 @@ body{
     }
 
 
-   .thumbnails {
+.thumbnails {
   display: flex;
-  gap: 5px; /* spacing between thumbnails */
+  gap: 10px;             /* a bit more spacing between thumbnails */
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin-top: 20px;      /* reduce top margin so it’s closer to main image */
 }
-
-    .thumbnail-wrapper img {
-      width: 70%;
-      height: 50px;
-      cursor: pointer;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-      user-select: none;
-  margin-bottom: 10px;
-  opacity: 0.5;
-    }
-
-    .thumbnail-wrapper img.active {
-      border: 1px solid #000000;
-  opacity: 8;
-
-    }
-
-        .thumbnail-wrapper img:hover {
-      border: 1px solid #000000;
-  opacity: 8;
-    }
 
 .thumbnail-wrapper {
   display: inline-block;
-  margin: 0px;
-  cursor: pointer; /* Makes it clear it’s clickable */
+  cursor: pointer;
   position: relative;
+  padding: 2px;
+  transition: border 0.3s ease, opacity 0.3s ease;
 }
+
+.thumbnail-wrapper img {
+  width: 60px;           /* smaller, consistent size for thumbnails */
+  height: 60px;
+  object-fit: cover;     /* ensures images fit nicely */
+  user-select: none;
+  opacity: 0.5;          /* default faded look */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border: 1px solid #8d8f91;  /* default border hidden */
+  border-radius: 5px;
+}
+
+.thumbnail-wrapper img.active,
+.thumbnail-wrapper img:hover {
+  border: 2px solid #F1592A;
+  border-radius: 5px;
+  opacity: 1;           /* fully visible when active or hover */
+  transform: scale(1.05);
+}
+
 
 #footer{
   color: #ffffff;
@@ -176,11 +183,30 @@ color: #ffffff;
   font-weight: 600;
 }
 
+/* Ensure all cards inside the row have same height */
 .card-link-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  
   color: inherit;
   text-decoration: none;
   box-shadow: 0 0 15px rgba(0, 118, 255, 0.15);
 }
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex: 1; /* fills the available space, keeps button at bottom */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 
 .card-hover {
     border: 1px solid #ccc; /* always visible border */
@@ -354,5 +380,54 @@ color: #ffffff;
   padding: 10px;
   width: 210px;      /* Set the width to your desired size */
   height: 200px;     /* Set the height to your desired size */
-  object-fit: contain; /* Ensures the image covers the area without distorting */
+  object-fit: cover; /* Ensures the image covers the area without distorting */
+}
+
+/* Default tab */
+#cardTabs .nav-link {
+  color: #1C2125;
+  font-weight: 600;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover state */
+#cardTabs .nav-link:hover {
+  color: #F1592A;
+  background-color: transparent;
+}
+
+/* Active tab */
+#cardTabs .nav-link.active {
+  color: #F1592A;
+  font-weight: 600;
+  background-color: transparent;
+  border-top: 2px solid #F1592A;
+}
+
+#datalink{
+   color: #F1592A;
+}
+
+/* Target the breadcrumb container */
+.breadcrumb {
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+/* Links inside breadcrumb */
+.breadcrumb a {
+  color: #8d8f91; /* link color */
+  text-decoration: none;
+  opacity: 8;
+}
+
+/* Active (current page) text */
+.breadcrumb .active {
+  color: #F1592A; /* red for current page */
+  font-weight: bold;
+}
+
+.breadcrumb a:hover {
+  color: #1C2125; /* red for current page */
+  font-weight: bold;
 }
