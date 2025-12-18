@@ -11,6 +11,8 @@
   <!-- Bootstrap and CSS -->
   <!--Link for connecting to bootstrap-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
   <!-- Boxicons CDN Link -->
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
   <!--Link to connect to font awesome-->
@@ -177,7 +179,12 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-8"></div>
+    <div class="col-sm-8">
+      <nav aria-label="breadcrumb" class="mb-3">
+  <ol class="breadcrumb" id="breadcrumb"></ol>
+</nav>
+
+    </div>
      <div class="col-sm-4">
       
     <form class="d-flex" role="search">
@@ -190,116 +197,60 @@
 
 <br>
 
-<div class="container">
-    <h3 style="font-weight: normal; color: #1C2125;">PRODUCT TITLE DESCRIPTION</h3>
-<hr>
 
-</div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-sm-7">
-             <div class="main-display" id="mainDisplay">
-  <img id="mainImage" src="" alt="Preview" />
+  <h3 style="font-weight: normal; color: #1C2125;">PRODUCT TITLE DESCRIPTION</h3>
+  <hr>
 </div>
 
-  <div class="thumbnails" id="thumbnailContainer">
-    <div class="thumbnail-wrapper">
-    <img src="./img/sample.jpg" data-detail="" data-bg="./img/sample.jpg" />
-    <br>
-</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-7">
 
-<div class="thumbnail-wrapper">
-    <img src="./img/sample.jpg" data-detail="" data-bg="./img/sample.jpg" />
-    <br>
-                </div>
+      <br>
+      <!-- Main Image Display -->
+      <div class="main-display" id="mainDisplay">
+        <img id="mainImage" src="" alt="Preview" />
+      </div>
 
-<div class="thumbnail-wrapper">
-    <img src="./img/sample.jpg" data-detail="" data-bg="./img/sample.jpg" />
-    <br>
-                </div>
+      <br><br>
 
-<div class="thumbnail-wrapper">
-    <img src="./img/sample.jpg" data-detail="" data-bg="./img/sample.jpg" />
-    <br>
+      <!-- Thumbnails -->
+      <div class="thumbnails" id="thumbnailContainer"></div>
+
+    </div>
+
+    <div class="col-sm-5" style="padding-top: 40px;">
+      <h4 id="detailText" style="font-weight: bold;"></h4>
+<br>
+      <p>
+        Kabellab products are meticulously designed for easy installation while maintaining the highest quality with an aesthetically pleasing design.
+        <br><br>
+Kabellab combines innovative design with technology to create efficient products that achieve maximum impact. These are Kabellab's guiding principles.
+ <br><br>
+Scroll below to learn more.
+      </up>
+    </div>
   </div>
 </div>
 
 
- <script>
-const mainImage = document.getElementById('mainImage');
-const mainDisplay = document.getElementById('mainDisplay');
-const thumbnailWrappers = document.querySelectorAll('#thumbnailContainer .thumbnail-wrapper');
-
-let currentIndex = 0;
-
-const updateDisplay = (index) => {
-  const selectedWrapper = thumbnailWrappers[index];
-  const selectedImg = selectedWrapper.querySelector('img');
-
-  if (!selectedImg) return;
-
-  // Update main image
-  mainImage.src = selectedImg.dataset.bg || '';
-  mainImage.alt = selectedImg.alt || 'Preview';
-
-  // Remove active from all thumbnails
-  thumbnailWrappers.forEach(wrapper => {
-    const img = wrapper.querySelector('img');
-    img.classList.remove('active');
-  });
-
-  // Add active to clicked thumbnail
-  selectedImg.classList.add('active');
-
-  // Show the button for this thumbnail
-  thumbnailWrappers.forEach(wrapper => {
-    const btn = wrapper.querySelector('.choice-card');
-    btn.classList.add('hidden');
-  });
-  const button = selectedWrapper.querySelector('.choice-card');
-  button.classList.remove('hidden');
-};
-
-// Thumbnail click
-thumbnailWrappers.forEach((wrapper, index) => {
-  const img = wrapper.querySelector('img');
-  img.addEventListener('pointerdown', () => {
-    currentIndex = index;
-    updateDisplay(index);
-  });
-});
-
-// Initial setup
-updateDisplay(currentIndex);
-
-
-</script>
-
-        </div>
-        <div class="col-sm-5" style="padding-top: 40px;">
-           <ul>
-      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo temporibus debitis aut obcaecati autem, inventore laboriosam numquam</li>
-      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ut, qui, totam fuga ab quidem.</li>
-      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus perferendis reiciendis consectetur est molestias aspernatur placeat</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. In similique voluptatibus, sunt tempora iure.</li>
-    </ul>
         </div>
     </div>
 </div>
 
-<br>
+<br><br>
 
-<div class="container">
+<div class="container mt-4">
   <div class="card text-center">
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs" id="cardTabs">
         <!-- Tabs generated dynamically -->
       </ul>
     </div>
-    <div class="card-body" id="cardBody">
-      <!-- Content rendered here -->
-    </div>
+ <div class="card-body fade show text-start" id="cardBody"></div>
+
   </div>
 </div>
 
@@ -307,115 +258,211 @@ updateDisplay(currentIndex);
   /* Fade effect */
   .fade {
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 0.3s ease;
   }
   .fade.show {
     opacity: 1;
   }
+  /* Optional styling */
+  .nav-link {
+    cursor: pointer;
+  }
 </style>
 
 <script>
-  const tabData = [
-    {
-      title: "Tab 1 Title",
-      text: `<p>This is content for tab 1.</p>
-             <ul><li>Point 1</li><li>Point 2</li></ul>`,
-      btnText: "Go somewhere",
-      btnLink: "#"
-    },
-    {
-      title: "Tab 2 Title",
-      text: `<p>Content for tab 2 with an image:</p>
-             <img src="https://via.placeholder.com/150" alt="example image" class="img-fluid">`,
-      btnText: "Learn more",
-      btnLink: "#"
-    },
-    {
-      title: "Tab 3 Title",
-      text: `<p>Tab 3 content can include <strong>HTML tags</strong> freely.</p>
-             <ol><li>First</li><li>Second</li></ol>`,
-      btnText: "Check it out",
-      btnLink: "#"
+ 
+ const breadcrumbEl = document.getElementById("breadcrumb");
+const crumb = JSON.parse(localStorage.getItem("breadcrumb"));
+
+breadcrumbEl.innerHTML = `
+  <li class="breadcrumb-item">
+    <a href="index.html">Products</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="product.html">${crumb.level2}</a>
+  </li>
+  <li class="breadcrumb-item active" aria-current="page">
+    ${crumb.level3}
+  </li>
+`;
+ 
+
+// ---------------------
+// LOAD SELECTED PRODUCT
+// ---------------------
+
+
+const selectedProduct = JSON.parse(localStorage.getItem("selectedProduct"));
+
+if (selectedProduct) {
+    // Main info
+   document.querySelector("h3").textContent =
+    selectedProduct.title || "Product Detail";
+    document.getElementById("detailText").textContent = selectedProduct.name;
+
+    // If product has no images array, create one using main image
+    if (!selectedProduct.images || selectedProduct.images.length === 0) {
+        selectedProduct.images = [selectedProduct.img];
     }
-  ];
+
+    // Generate thumbnails dynamically
+    const thumbnailContainer = document.getElementById("thumbnailContainer");
+    thumbnailContainer.innerHTML = "";
+
+    selectedProduct.images.forEach(imgSrc => {
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("thumbnail-wrapper");
+
+        wrapper.innerHTML = `
+            <img src="${imgSrc}" data-bg="${imgSrc}">
+        `;
+
+        thumbnailContainer.appendChild(wrapper);
+    });
+}
+
+// ---------------------
+// IMAGE SWITCHER LOGIC
+// ---------------------
+const mainImage = document.getElementById('mainImage');
+
+let thumbnailWrappers = [];
+
+function initThumbnails() {
+    thumbnailWrappers = document.querySelectorAll('#thumbnailContainer .thumbnail-wrapper');
+
+    thumbnailWrappers.forEach((wrapper, index) => {
+        const img = wrapper.querySelector('img');
+
+        img.addEventListener('pointerdown', () => {
+            updateDisplay(index);
+        });
+    });
+
+    updateDisplay(0); // show first image by default
+}
+
+function updateDisplay(index) {
+    const selectedWrapper = thumbnailWrappers[index];
+    const selectedImg = selectedWrapper.querySelector('img');
+
+    if (!selectedImg) return;
+
+    // Update main image
+    mainImage.src = selectedImg.dataset.bg || '';
+    mainImage.alt = selectedImg.alt || 'Preview';
+
+    // Remove active class from all thumbnails
+    thumbnailWrappers.forEach(wrapper => {
+        wrapper.querySelector('img').classList.remove('active');
+    });
+
+    // Highlight selected thumbnail
+    selectedImg.classList.add('active');
+}
+
+// Initialize after DOM updates
+setTimeout(initThumbnails, 50);
+
+
+ // -----------------------------
+  // TAB DATA
+  // -----------------------------
+const tabData = [
+  {
+    tabLabel: "Product Description",
+     icon: "bi-file-text",
+    title: "",
+    text: selectedProduct?.description || "<p>No description available.</p>"
+  },
+  {
+    tabLabel: "Product Features",
+    icon: "bi-list-check",
+    title: "",
+    text: selectedProduct?.features || "<p>No features listed.</p>"
+  },
+  {
+    tabLabel: "Data Sheet",
+    icon: "bi-file-earmark-pdf",
+    title: "",
+    text: selectedProduct?.datasheet || "<p>No data sheet available.</p>"
+  }
+];
 
   const cardTabs = document.getElementById('cardTabs');
   const cardBody = document.getElementById('cardBody');
 
-  // Generate tabs
-  tabData.forEach((tab, index) => {
-    const li = document.createElement('li');
-    li.className = "nav-item";
+  // -----------------------------
+  // GENERATE TABS
+  // -----------------------------
+ tabData.forEach((tab, index) => {
+  const li = document.createElement('li');
+  li.className = "nav-item";
 
-    const a = document.createElement('a');
-    a.className = "nav-link" + (index === 0 ? " active" : "");
-    a.href = "#";
-    a.textContent = "Tab " + (index + 1);
-    a.dataset.index = index;
+  const a = document.createElement('a');
+  a.className = "nav-link" + (index === 0 ? " active" : "");
+  a.href = "#";
+  a.dataset.index = index;
+  a.innerHTML = `<i class="bi ${tab.icon} me-2"></i>${tab.tabLabel}`;
 
-    li.appendChild(a);
-    cardTabs.appendChild(li);
-  });
+  li.appendChild(a);
+  cardTabs.appendChild(li);
+});
 
-  // Function to display content with fade
+
+  // -----------------------------
+  // SHOW CONTENT WITH FADE
+  // -----------------------------
   function showContent(index) {
+    // fade out
     cardBody.classList.remove('show');
+
     setTimeout(() => {
       const tab = tabData[index];
+
+      // update content
       cardBody.innerHTML = `
         <h5 class="card-title">${tab.title}</h5>
         <div class="card-text">${tab.text}</div>
-        <a href="${tab.btnLink}" class="btn btn-primary">${tab.btnText}</a>
       `;
+
+      // fade in
       cardBody.classList.add('fade', 'show');
-    }, 200); // Delay to allow fade-out
+    }, 200); // match with CSS transition
   }
 
-  // Initial content
-  cardBody.classList.add('fade', 'show');
+  // -----------------------------
+  // INITIAL CONTENT
+  // -----------------------------
   showContent(0);
 
-  // Tab click event
+  // -----------------------------
+  // TAB CLICK EVENT
+  // -----------------------------
   const tabs = cardTabs.querySelectorAll('.nav-link');
   tabs.forEach(tab => {
     tab.addEventListener('click', e => {
       e.preventDefault();
+      // set active tab
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
+
+      // show content
       showContent(tab.dataset.index);
     });
   });
+
+
+
 </script>
 
-<br><br><br>
 
-<div class="container">
 
-<div class="card">
-  <h5 class="card-header">Featured</h5>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  </div>
-</div>
-
-</div>
 
 <br><br><br>
 
-<div class="container">
 
-<div class="card">
-  <h5 class="card-header">Featured</h5>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  </div>
-</div>
 
-</div>
-
-<br><br><br><br>
 
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">
@@ -526,5 +573,3 @@ China
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
 </body>
 </html>
-
-
